@@ -1,0 +1,33 @@
+ <button style="display: none;" onclick="notifyMe()" id="trigger" >Notify me!</button>
+
+<script>
+document.getElementById('trigger').click();
+
+function notifyMe() {
+  if (!('Notification' in window)) {
+    alert('This Browser Does Not Support Notification');
+  }
+
+  else if (Notification.permission === 'granted') {
+    var notification = new Notification('Class Link Is Now On Live', {
+      body: '🔴Click This🔴',
+      icon: 'https://devicelook.w3spaces.com/LogoFavicon.ico?bypass-cache=1632966060'
+    });
+
+  
+notification.onclick = function () {
+      window.open("sex");
+    };
+
+} 
+
+  else if (Notification.permission !== 'denied') {
+    Notification.requestPermission().then(function (permission) {
+      if (permission === 'granted') {
+        var notification = new Notification('Thanks For Subcribe Us');
+      }
+    });
+  }
+
+}
+</script>
